@@ -10,12 +10,16 @@ import {createGlobalStyle, ThemeProvider} from "styled-components"
 // Components
 import Header from "./header"
 
+// Context
+import {useGlobalStateContext} from "../context/globalContext"
 
+
+// cursor: none;
 const GlobalStyle = createGlobalStyle`
 ${normalize}
+
 * {
   text-decoration: none;
-  cursor: none;
 }
 html {
   box-sizing: border-box;
@@ -26,8 +30,11 @@ body {
   font-size: 16px;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: ${props => props.theme.background};
+  color: ${props => props.theme.color};
   overscroll-behavior: none;
   overflow-x: hidden;
+  transition: background 0.3s ease;
+  transition: color 0.3s ease;
 }
 `
 //background: ${props => props.theme.background};
@@ -45,15 +52,19 @@ const Layout = ({ children }) => {
 
   const darkTheme = {
     background:'#1d1d1d',
-    text:'#fff'
+    text:'#fff',
+    accent:"#e8aa1b"
   }
   const lightTheme = {
     background:'#ecebeb',
-    text:'#1d1d1d'
+    text:'#1d1d1d',
+    accent:"#e8aa1b"
   }
 
+  const {currentTheme} = useGlobalStateContext()
+
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={currentTheme === 'dark'? darkTheme:lightTheme}>
     <GlobalStyle/>
     <Header/>
     <main>{children}</main>
