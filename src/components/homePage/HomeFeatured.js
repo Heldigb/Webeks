@@ -4,12 +4,7 @@ import { Link } from "gatsby"
 import { motion, useAnimation } from "framer-motion"
 // Styled Components
 import { Container, Flex } from "../../styles/globalStyles"
-import {
-  HomeFeaturedSection,
-  FeaturedVideo,
-  FeaturedContent,
-  FeaturedProjects,
-} from "../../styles/homeStyles"
+import { HomeFeaturedSection, FeaturedVideo, FeaturedContent, FeaturedProjects, } from "../../styles/homeStyles"
 // Scroll Animations
 import { useInView } from "react-intersection-observer"
 
@@ -56,12 +51,12 @@ const HomeFeatured = ({ onCursor }) => {
                 transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
                 className="meta"
               >
-                <h4>PEI Seafood</h4>
-                <h4>2019</h4>
+                <h4>NOW in Prague</h4>
+                <h4>2020</h4>
               </motion.div>
             </Flex>
             <h2 className="featured-title">
-              NOT <br /> HUMBLE
+              READY <br /> TO BEGIN
               <span className="arrow">
                 <motion.svg
                   animate={{ x: hovered ? 48 : 0 }}
@@ -82,19 +77,24 @@ const HomeFeatured = ({ onCursor }) => {
             <video
               loop
               autoPlay
-              src={require("../../assets/video/featured-video.mp4")}
+              src={require("../../assets/video/video5.mp4")}
             ></video>
           </FeaturedVideo>
         </Link>
       </Container>
       <Container>
+        <Link to={'/works'}>
         <FeaturedProjects>
+
           <Flex flexEnd>
             <button>
+
               <span>All Projects</span>
+
             </button>
           </Flex>
         </FeaturedProjects>
+      </Link>
       </Container>
     </HomeFeaturedSection>
   )

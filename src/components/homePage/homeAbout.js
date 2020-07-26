@@ -21,55 +21,58 @@ import { useInView } from "react-intersection-observer"
 const accordionIds = [
   {
     id: 0,
-    title: "Pre-Production",
+    title: "Design",
     results: [
-      "Creative Development",
-      "Writing",
-      "Creative Development",
-      "Writing",
-      "Storyboards",
-      "Art Direction",
-      "Creative Direction",
-      "Location Scouting",
-      "Casting",
-    ],
+      "Modern Web Design",
+      "Refresh Your Website",
+      "Branding & Logo Design",
+      "Product Representation",
+      "Video, Animation and motion graphics",
+      "Responsive Website",
+      "Banners Design",
+      "Social Media",
+      "Consulting",
+
+     ],
   },
   {
     id: 1,
-    title: "Video Production",
+    title: "Development",
     results: [
-      "Principle Photography",
-      "Production Management",
-      "Crew",
-      "Dailies",
-      "LTO-Archiving",
+      "Simple Website",
+      "Dynamic Website",
+      "API Data Sources",
+      "Custom Plugins",
+      "E-Commerce",
+      "Market Places",
+      "Enterprise",
+      "WordPress",
+      "Blogs",
     ],
   },
   {
     id: 2,
-    title: "Post-Production",
+    title: "Optimization",
     results: [
-      "Colour correction",
-      "Offline editing",
-      "Online editing",
-      "VFX",
-      "Animation and motion graphics",
-      "Closed captioning and subtitles",
-      "Descriptive video",
-      "Dailies",
-      "Quality control",
-      "LTO Archiving",
+
+      "Cross Browser Compatibility",
+      "Project Performance",
+      "Responsive all Devices",
+      "Content Management",
+      "Quality Control",
+      "Media Content",
+      "SEO",
     ],
   },
   {
     id: 3,
-    title: "Audio Post-Production",
+    title: "Consulting",
     results: [
-      "We work with some amazing partners who provide:",
-      "Sound Design",
-      "SFX",
-      "Music",
-      "Sound Mix",
+      "Business Solutions",
+      "Best Hosting Solution",
+      "Optimal Project Prices",
+      "Features Recommendations",
+      "Website Check-Up",
     ],
   },
 ]
@@ -113,11 +116,11 @@ const HomeAbout = ({ onCursor }) => {
               services.
             </h2>
             <p>
-              Everybody’s got a story. And we don’t stop until we’ve uncovered
-              what makes yours worth telling. Whether it’s working directly with
-              you, an agency partner, or putting the finishing touches on
-              something special, we’re ready to dig in and get our hands
-              dirty—are you?
+              In most of the cases web development companies work like robots
+              without interest to your business, hunting for profit,
+              counting hours and simply not working well if budget is low.
+              However, not everyone is working in the same way.
+              I'm taking my job seriously with respect to details of your idea.
             </p>
           </About>
           <Services>
@@ -148,7 +151,7 @@ const Accordion = ({ details, expanded, setExpanded, onCursor }) => {
         initial={false}
         onClick={() => setExpanded(isOpen ? false : details.id)}
         whileHover={{
-          color: !isOpen && currentTheme === "dark" ? "#ffffff" : "#000000",
+          color: !isOpen && currentTheme === "dark" ? "#ffffff" : "#d29006",
         }}
         onHoverStart={() => setHovered(!hovered)}
         onHoverEnd={() => setHovered(!hovered)}

@@ -10,6 +10,9 @@ import {createGlobalStyle, ThemeProvider} from "styled-components"
 // Components
 import Header from "./header"
 import CustomCursor from "../components/customCursor"
+import Navigation from "./navigation"
+import Footer from "./footer"
+
 // Context
 import {
   useGlobalStateContext,
@@ -58,29 +61,58 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const [hamburgerPosition, setHamburgerPosition] = useState({
+    x:0,
+    y:0,
+
+  })
+
   const darkTheme = {
     background:'#1d1d1d',
     text:'#fff',
-    accent:"#e8aa1b"
+    accent:"#F8A306",
+    left:`${hamburgerPosition.x}px`,
+    top:`${hamburgerPosition.y}px`,
   }
   const lightTheme = {
     background:'#ecebeb',
     text:'#1d1d1d',
-    accent:"#e8aa1b"
+    accent:"#F8A306",
+    left:`${hamburgerPosition.x}px`,
+    top:`${hamburgerPosition.y}px`,
   }
 
   const onCursor = cursorType => {
     cursorType = (cursorStyle.includes(cursorType) && cursorType) || false
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
   }
+// MENU STATE CURSOR
+const [ toggleMenu, setToggleMenu] = useState(false)
+
+
 
 
   return (
     <ThemeProvider theme={currentTheme === 'dark'? darkTheme:lightTheme}>
     <GlobalStyle/>
-    <CustomCursor/>
-    <Header onCursor={onCursor}/>
-    <main>{children}</main>
+    <CustomCursor toggleMenu={toggleMenu}/>
+    <Header
+      onCursor={onCursor}
+      toggleMenu={toggleMenu}
+      setToggleMenu={setToggleMenu}
+      hamburgerPosition={hamburgerPosition}
+      setHamburgerPosition={setHamburgerPosition}
+    />
+      <Navigation toggleMenu={toggleMenu}
+                  setToggleMenu={setToggleMenu}
+                  onCursor={onCursor} />
+      <main>{children}</main>
+
+      <Footer
+        onCursor={onCursor}
+        hamburgerPosition={hamburgerPosition}
+        setHamburgerPosition={setHamburgerPosition}
+      />
     </ThemeProvider>
   )
 }
