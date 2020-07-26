@@ -9,17 +9,21 @@ import {createGlobalStyle, ThemeProvider} from "styled-components"
 
 // Components
 import Header from "./header"
-
+import CustomCursor from "../components/customCursor"
 // Context
-import {useGlobalStateContext} from "../context/globalContext"
+import {
+  useGlobalStateContext,
+  useGlobalDispatchContext
+} from "../context/globalContext"
 
 
-// cursor: none;
+//
 const GlobalStyle = createGlobalStyle`
 ${normalize}
 
 * {
   text-decoration: none;
+  cursor: none;
 }
 html {
   box-sizing: border-box;
@@ -39,7 +43,11 @@ body {
 `
 //background: ${props => props.theme.background};
 
+
+
 const Layout = ({ children }) => {
+  const dispatch = useGlobalDispatchContext()
+  const { cursorStyle, currentTheme } = useGlobalStateContext()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -61,12 +69,17 @@ const Layout = ({ children }) => {
     accent:"#e8aa1b"
   }
 
-  const {currentTheme} = useGlobalStateContext()
+  const onCursor = cursorType => {
+    cursorType = (cursorStyle.includes(cursorType) && cursorType) || false
+    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+  }
+
 
   return (
     <ThemeProvider theme={currentTheme === 'dark'? darkTheme:lightTheme}>
     <GlobalStyle/>
-    <Header/>
+    <CustomCursor/>
+    <Header onCursor={onCursor}/>
     <main>{children}</main>
     </ThemeProvider>
   )
