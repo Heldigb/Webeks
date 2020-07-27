@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 //Framer Motion
 import { motion, useAnimation } from "framer-motion"
 // Styled Components
-import { Container, Flex } from "../../styles/globalStyles"
+import { Container, Flex,FlexMobile } from "../../styles/globalStyles"
 import { HomeFeaturedSection, FeaturedVideo, FeaturedContent, FeaturedProjects, } from "../../styles/homeStyles"
 // Scroll Animations
 import { useInView } from "react-intersection-observer"
@@ -44,7 +44,7 @@ const HomeFeatured = ({ onCursor }) => {
             onMouseEnter={() => onCursor("hovered")}
             onMouseLeave={onCursor}
           >
-            <Flex spaceBetween>
+            <FlexMobile  spaceBetween>
               <h3>Featured Project</h3>
               <motion.div
                 animate={{ opacity: hovered ? 1 : 0 }}
@@ -54,7 +54,7 @@ const HomeFeatured = ({ onCursor }) => {
                 <h4>NOW in Prague</h4>
                 <h4>2020</h4>
               </motion.div>
-            </Flex>
+            </FlexMobile>
             <h2 className="featured-title">
               READY <br /> TO BEGIN
               <span className="arrow">
@@ -89,7 +89,7 @@ const HomeFeatured = ({ onCursor }) => {
           <Flex flexEnd>
             <button>
 
-              <span>All Projects</span>
+              <span>See All Projects</span>
 
             </button>
           </Flex>

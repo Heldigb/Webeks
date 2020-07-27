@@ -4,6 +4,10 @@ import { motion } from "framer-motion"
 export const FooterNav = styled(motion.div)`
   height: 300px;
   margin-top: 296px;
+      @media (max-width: 960px){
+        height: 250px;
+  margin-top: 150px;
+      }
 `
 
 export const FooterContent = styled.div`
@@ -12,6 +16,10 @@ export const FooterContent = styled.div`
   font-weight: 600;
   line-height: 8px;
   flex: 1;
+   @media (max-width: 960px){
+  
+   text-align: center;
+    }
   ${props =>
   props.wider &&
   css`

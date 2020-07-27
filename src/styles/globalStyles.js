@@ -9,7 +9,9 @@ export const Container = styled.div`
   width: auto;
   height: 100%;
  
-  
+@media (min-width: 960px){
+  max-width: 890px;
+}
 @media (min-width: 1024px){
   max-width: 960px;
 }
@@ -27,13 +29,46 @@ ${props => props.fluid && css`
   margin: 0;
   max-width: 100%;
 `}
-
 `
+
 export const Flex = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+
+
+  ${props=> props.spaceBetween && css`
+  justify-content: space-between;
+  `}
   
+  ${props=> props.flexEnd && css`
+  justify-content: flex-end;
+  `}
+    @media (max-width: 960px){
+${props=> props.flexEnd && css`
+  justify-content: flex-start;
+  `}
+      }
+  ${props=> props.alignTop && css`
+  align-items: top;
+  `}
+  
+  ${props=> props.noHeight && css`
+  height: 0;
+  `}  
+`
+
+
+export const FlexMobile = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+     @media (max-width: 960px){
+    flex-direction: column;
+    overflow-x: auto;
+
+    }
+
   ${props=> props.spaceBetween && css`
   justify-content: space-between;
   `}
@@ -66,7 +101,6 @@ export const Cursor = styled.div`
   pointer-events: none;
   z-index: 999;
   &.pointer {
-
     border: 4px solid ${props => props.theme.text}!important;
   }
   &.hovered {
@@ -86,5 +120,9 @@ export const Cursor = styled.div`
     border: 4px solid ${props => props.theme.accent};
     top: ${props => props.theme.top} !important;
     left: ${props => props.theme.left} !important;
+    }
+    
+    @media (max-width: 768px){
+     display: none;
     }
 `

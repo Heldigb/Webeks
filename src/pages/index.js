@@ -21,9 +21,9 @@ const IndexPage = props => {
   }
   return (
     <Layout>
-      {console.log("props", props)}
-      <HomeBanner/>
-      <HomeContent />
+      {/*{console.log("props", props)}*/}
+      <HomeBanner onCursor={onCursor} />
+      <HomeContent/>
       <HomeFeatured  onCursor={onCursor} />
       <HomeAbout onCursor={onCursor} />
     </Layout>

@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer"
 import { useAnimation } from "framer-motion"
 
 //Styled Components
-import { Container, Flex } from "../styles/globalStyles"
+import { Container, FlexMobile } from "../styles/globalStyles"
 import { FooterNav, FooterContent, FooterSocial } from "../styles/footerStyles"
 
 //Icons
@@ -54,7 +54,7 @@ const Footer = ({ setHamburgerPosition, onCursor }) => {
       }}
     >
       <Container>
-        <Flex spaceBetween>
+        <FlexMobile  spaceBetween>
           <FooterContent>
             <p>+45.52.79.4567</p>
             <p>info@webexpress.dk</p>
@@ -84,7 +84,7 @@ const Footer = ({ setHamburgerPosition, onCursor }) => {
             </a>
 
           </FooterSocial>
-        </Flex>
+        </FlexMobile>
       </Container>
     </FooterNav>
   )

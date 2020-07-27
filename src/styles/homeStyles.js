@@ -8,6 +8,9 @@ export const Banner = styled.div`
   width: 100%;
   position: relative;
   margin-bottom: 296px;
+     @media (max-width: 768px){
+ margin-bottom: 100px;
+    }
 `
 export const Background = styled.div`
   height: 100%;
@@ -32,6 +35,9 @@ export const BannerTitle = styled(motion.h1)`
   left: -18px;
   color: ${props => props.theme.text};
   pointer-events: none;
+   @media (max-width: 768px){
+    bottom: 0px;
+    }
 `
 //
 export const Headline = styled(motion.span)`
@@ -39,16 +45,21 @@ export const Headline = styled(motion.span)`
   font-size: 23rem;
   font-weight: 900;
   line-height: 0.76;
+   @media (max-width: 960px){
+    font-size: 12rem;
+    }
+   @media (max-width: 768px){
+    font-size: 8rem;
+    }
+   
 `
-
-
-
-
-
 
 //Content Section
 export const HomeContentSection = styled(motion.div)`
   margin-bottom: 200px;
+   @media (max-width: 768px){
+      margin-bottom: 100px;
+    }
 `
 export const Content = styled(motion.h2)`
   width: 53%;
@@ -56,16 +67,27 @@ export const Content = styled(motion.h2)`
   font-weight: 400;
   margin-left: 124px;
   color: ${props => props.theme.text};
-`
+     @media (max-width: 768px){
+        font-size: 1.8rem;
+        margin-left: 0;
+        width: 100%;
+      }
+  `
 
 //Featured Section
 export const HomeFeaturedSection = styled(motion.div)`
   margin-bottom: 200px;
   position: relative;
+       @media (max-width: 768px){
+    margin-bottom: 100px;
+      }
   a {
     margin-bottom: 200px;
     position: relative;
     display: block;
+        @media (max-width: 768px){
+    margin-bottom: 100px;
+      }
   }
 `
 
@@ -75,6 +97,10 @@ export const FeaturedContent = styled(motion.div)`
   padding: 56px 124px;
   box-sizing: border-box;
   color: ${props => props.theme.text};
+  
+      @media (max-width: 768px){
+  padding: 10px;
+      }
   h3 {
     font-size: 1.4rem;
   }
@@ -164,16 +190,23 @@ export const FeaturedProjects = styled.div`
 //ABOUT SECTION
 
 export const HomeAboutSection = styled(motion.div)`
-  /* margin-bottom: 200px; */
+ 
+
 `
 export const About = styled.div`
   width: 100%;
+  
   h2 {
     width: 60%;
     font-size: 2.3rem;
     font-weight: 400;
     margin-left: 124px;
     color: ${props => props.theme.text};
+        
+  @media (max-width: 860px){
+     margin: 0;
+      width: 100%;
+    }
   }
   p {
     max-width: 440px;
@@ -181,10 +214,19 @@ export const About = styled.div`
     line-height: 1.6rem;
     margin-left: 124px;
     color: ${props => props.theme.text};
+          
+    @media (max-width: 860px){
+      margin: 0;
+      padding-top: 50px;
+    }
   }
 `
 export const Services = styled.div`
   color: ${props => props.theme.text};
+    @media (max-width: 960px){
+      margin: 0;
+      padding-top: 50px;
+    }
 `
 
 //Accordion

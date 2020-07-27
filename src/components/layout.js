@@ -27,7 +27,12 @@ ${normalize}
 * {
   text-decoration: none;
   cursor: none;
+      @media (max-width: 960px){
+            opacity: 1!important;
+       
+    }
 }
+ul{list-style: none;}
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;

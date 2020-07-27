@@ -29,7 +29,7 @@ const Header = ({ onCursor, setToggleMenu, toggleMenu, hamburgerPosition, setHam
     onCursor('locked')
     setHamburgerPosition({
       x: position.x,
-      y: position.y +72
+      y: position.y + 72
     })
   }
 
@@ -38,7 +38,6 @@ const Header = ({ onCursor, setToggleMenu, toggleMenu, hamburgerPosition, setHam
   }, [currentTheme])
 
   return (
-    // <HeaderNav animate={{y:0, opacity:1}} initial={{y:-72, opacity:0}} transition={{ duration:1, ease: [.6, .05, -.01, 0.9]}}>
     <HeaderNav animate={{ y: 0, opacity: 1 }} initial={{ y: -72, opacity: 0 }}
                transition={{ duration: 1, ease: [.6, .05, -.01, 0.9] }}>
       <Container>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 // Styled Components
-import { Container, Flex } from "../../styles/globalStyles"
+import { Container,  FlexMobile } from "../../styles/globalStyles"
 //Framer Motion
 import { motion, useAnimation } from "framer-motion"
 //Home Component
@@ -108,7 +108,7 @@ const HomeAbout = ({ onCursor }) => {
       }}
     >
       <Container>
-        <Flex alignTop>
+        <FlexMobile alignTop>
           <About>
             <h2>
               Furrow is an integrated, full-service creative studio offering
@@ -135,7 +135,7 @@ const HomeAbout = ({ onCursor }) => {
               />
             ))}
           </Services>
-        </Flex>
+        </FlexMobile>
       </Container>
     </HomeAboutSection>
   )

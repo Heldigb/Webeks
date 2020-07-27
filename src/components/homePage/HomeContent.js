@@ -41,6 +41,7 @@ const HomeContent = () => {
           Happy for New Projects, Challenges and Collaborations
 
         </Content>
+
       </Container>
     </HomeContentSection>
   )
